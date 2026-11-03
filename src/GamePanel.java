@@ -7,7 +7,7 @@ import java.awt.event.KeyListener;
 import java.util.ArrayList;
 
 public class GamePanel extends JPanel implements ActionListener, KeyListener {
-    int boardWidth = 360;
+    int boardWidth = 640;
     int boardHeight = 640;
 
     Bird bird;
@@ -45,7 +45,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
         menuPanel.playButton.addActionListener(e -> startGame());
         add(menuPanel);
 
-        // Pulsante "RICOMINCIA" per il Game Over
+        // Pulsante RICOMINCIA
         restartButton = new JButton("RICOMINCIA");
         restartButton.setBounds(boardWidth / 2 - 100, boardHeight / 2 + 40, 200, 50);
         restartButton.setFont(new Font("Arial Black", Font.BOLD, 16));

@@ -3,7 +3,7 @@ import javax.swing.*;
 public class FlappyBird {
     public static void main(String[] args){
         JFrame frame = new JFrame("Flappy Bird");
-        frame.setSize(360, 640);
+        frame.setSize(640, 640);
         frame.setLocationRelativeTo(null);
         frame.setResizable(false);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
