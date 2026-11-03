@@ -21,7 +21,6 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
     boolean gameOver = false;
     boolean gameStarted = false;
 
-    // Variabile per gestire il delay sul tasto spaziatrice dopo il Game Over
     long gameOverTime = 0;
 
     Timer gameLoop;
@@ -121,7 +120,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
             g2d.setFont(new Font("Arial", Font.BOLD, 20));
             g2d.drawString("Punteggio: " + (int) score, 110, boardHeight / 2 - 15);
 
-            restartButton.setVisible(true); // Mostra il pulsante visivo
+            restartButton.setVisible(true); // Mostra il pulsante
         } else {
             g2d.drawString(String.valueOf((int) score), 20, 45);
         }
@@ -178,10 +177,8 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
     public void keyPressed(KeyEvent e){
         if(e.getKeyCode() == KeyEvent.VK_SPACE){
             if (gameStarted && !gameOver) {
-                // Salto normale durante il gioco
                 velocityY = -9;
             } else if (gameOver) {
-                // Controlla che siano passati almeno 500ms prima di permettere il restart con lo spazio
                 long currentTime = System.currentTimeMillis();
                 if (currentTime - gameOverTime > 500) {
                     restartGame();
